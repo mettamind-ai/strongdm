@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Vũ Trụ Bản Sao Số (DTU)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag" style="color:var(--accent);">Kỹ thuật</div>
+    <h1>Vũ Trụ Bản Sao Số</h1>
+    <p class="subtitle">Nhân bản hành vi của các dịch vụ bên thứ ba mà phần mềm của chúng tôi phụ thuộc vào.</p>
+  </div>
+
+  <article>
+    <p style="font-size:18px;">Chúng tôi đã xây dựng bản sao của Okta, Jira, Slack, Google Docs, Google Drive và Google Sheets, tái tạo API, các trường hợp biên và hành vi có thể quan sát được của chúng.</p>
+
+    <p>Với DTU, chúng tôi có thể xác thực ở khối lượng và tốc độ vượt xa giới hạn production. Chúng tôi có thể kiểm tra các chế độ lỗi nguy hiểm hoặc bất khả thi khi chạy với dịch vụ thật. Chúng tôi có thể chạy hàng nghìn kịch bản mỗi giờ mà không bị giới hạn tốc độ, kích hoạt phát hiện lạm dụng, hay tích lũy chi phí API.</p>
+
+    <h2>Tại sao DTU?</h2>
+
+    <p>Việc tạo một bản sao trung thực cao của một ứng dụng SaaS quan trọng luôn khả thi, nhưng chưa bao giờ khả thi về mặt kinh tế. Nhiều thế hệ kỹ sư có thể đã <em style="color:var(--accent);">muốn</em> có một bản sao đầy đủ trong bộ nhớ của CRM để test, nhưng tự kiểm duyệt đề xuất xây dựng nó. Họ thậm chí không đưa lên quản lý, vì họ biết câu trả lời sẽ là không.</p>
+
+    <p>DTU là bằng chứng rằng điều không thể tưởng tượng được sáu tháng trước giờ đã trở thành thường nhật.</p>
+
+    <div style="display:grid;gap:16px;margin:32px 0;">
+      <div class="card" style="display:flex;gap:16px;align-items:center;padding:20px;margin:0;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(34,166,184,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px;">1</div>
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--text);">Xác Thực Khối Lượng Lớn</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Hàng nghìn kịch bản mỗi giờ, không giới hạn tốc độ hay chi phí API</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:16px;align-items:center;padding:20px;margin:0;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(34,166,184,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px;">2</div>
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--text);">Chế Độ Lỗi Nguy Hiểm</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Test các trường hợp biên bất khả thi khi chạy với dịch vụ thật</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:16px;align-items:center;padding:20px;margin:0;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(34,166,184,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px;">3</div>
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--text);">Không Phát Hiện Lạm Dụng</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Tránh kích hoạt kiểm soát bảo mật khi stress-test tích hợp</div>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:16px;align-items:center;padding:20px;margin:0;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(34,166,184,0.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px;">4</div>
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--text);">Tính Xác Định</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Điều kiện test có thể phát lại và kiểm soát cho mọi kịch bản</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Cách Hoạt Động</h2>
+
+    <div class="card" style="padding:24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+        <div style="text-align:center;flex:1;min-width:120px;">
+          <div style="font-size:24px;margin-bottom:8px;">&#x1F534;</div>
+          <div style="font-weight:600;margin-bottom:4px;">Phụ Thuộc Thực</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Google Drive API</div>
+        </div>
+        <div style="color:var(--accent);font-size:24px;">&#8594;</div>
+        <div style="text-align:center;flex:1;min-width:120px;">
+          <div style="font-size:24px;margin-bottom:8px;">&#x1F504;</div>
+          <div style="font-weight:600;margin-bottom:4px;">Nhân Bản Hành Vi</div>
+          <div style="font-size:13px;color:var(--text-secondary);">DTU Twin</div>
+        </div>
+        <div style="color:var(--accent);font-size:24px;">&#8594;</div>
+        <div style="text-align:center;flex:1;min-width:120px;">
+          <div style="font-size:24px;margin-bottom:8px;">&#x2705;</div>
+          <div style="font-weight:600;margin-bottom:4px;">Xác Thực Quy Mô</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Kịch bản không giới hạn</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Điểm mấu chốt là tái tạo hành vi tại ranh giới. Chúng tôi xây dựng test double từ hợp đồng API và các trường hợp biên quan sát được, sau đó xác thực chúng so với phụ thuộc thật cho đến khi không còn tìm thấy sự khác biệt hành vi nào.</p>
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="techniques.html">&larr; Tất cả Kỹ thuật</a>
+    <a class="btn" href="gene-transfusion.html">Truyền Gene &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>

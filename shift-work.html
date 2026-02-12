@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Làm Theo Ca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag" style="color:var(--gradient-4);">Kỹ thuật</div>
+    <h1>Làm Theo Ca</h1>
+    <p class="subtitle">Phân biệt giữa phát triển hệ thống tương tác và không tương tác.</p>
+  </div>
+
+  <article>
+    <h2 style="margin-top:0;">Hai Chế Độ Phát Triển</h2>
+
+    <p style="font-size:18px;">Chúng tôi phân biệt giữa phát triển hệ thống <strong style="color:var(--accent);">tương tác</strong> và <strong style="color:var(--accent-secondary);">không tương tác</strong>.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;margin:32px 0 40px;">
+      <div class="card" style="border-top:4px solid var(--accent);margin:0;">
+        <h3 style="color:var(--accent);">Tương Tác</h3>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:16px;">Nhịp quen thuộc: tạo, làm rõ, tạo, phê duyệt, sửa.</p>
+        <div style="font-size:13px;color:var(--text-secondary);">
+          <div style="margin-bottom:8px;">&#8226; Cursor, Claude Code, Codex</div>
+          <div style="margin-bottom:8px;">&#8226; Cùng phát triển tầm nhìn chung</div>
+          <div>&#8226; Chuyển đổi ý định con người thành hệ thống mới</div>
+        </div>
+      </div>
+      <div class="card" style="border-top:4px solid var(--accent-secondary);margin:0;">
+        <h3 style="color:var(--accent-secondary);">Không Tương Tác</h3>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:16px;">Các tác vụ đã được đặc tả đầy đủ.</p>
+        <div style="font-size:13px;color:var(--text-secondary);">
+          <div style="margin-bottom:8px;">&#8226; Đặc tả chính thức (RFC)</div>
+          <div style="margin-bottom:8px;">&#8226; Ứng dụng hiện có đang hoạt động</div>
+          <div>&#8226; Thực thi end-to-end khi ý định đã hoàn chỉnh</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Chức Năng vs Phi Chức Năng</h2>
+
+    <p>Trong lịch sử, kỹ thuật phần mềm phân biệt giữa đặc tả <em>chức năng</em> và <em>phi chức năng</em>.</p>
+
+    <div class="card" style="border-left:4px solid var(--gradient-4);padding:24px;">
+      <h4 style="margin-bottom:12px;color:var(--gradient-4);">Ví Dụ Instagram</h4>
+      <p style="margin:0;font-size:15px;line-height:1.7;">Một bản sao Instagram hợp lý có thể được mô tả trong vài câu ý định chức năng. Độ khó kỹ thuật của một mạng xã hội ảnh toàn cầu nằm chủ yếu <em>ngoài</em> đặc tả chức năng: khả năng mở rộng, hiệu năng, tính sẵn sàng, bảo mật, hiệu quả, và các thuộc tính liên quan.</p>
+    </div>
+
+    <h2>Đầu Vào Không Tương Tác</h2>
+
+    <p>Các ví dụ kinh điển của đầu vào không tương tác bao gồm:</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;">
+        <div style="font-weight:600;margin-bottom:8px;">Đặc Tả Chính Thức</div>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">RFC 9113 cho HTTP/2, thường đi kèm bộ xác thực (h2spec, nghttp2)</div>
+        <div style="display:inline-block;font-size:11px;background:rgba(59,130,246,0.1);color:var(--accent-secondary);padding:4px 8px;border-radius:4px;">Spec + Bộ Test = Ý Định Hoàn Chỉnh</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;">
+        <div style="font-weight:600;margin-bottom:8px;">Ứng Dụng Hiện Có Đang Hoạt Động</div>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">Một hệ thống bằng phiên bản Java cũ đóng vai trò đặc tả hành vi hoàn chỉnh cho việc tái triển khai bằng Python</div>
+        <div style="display:inline-block;font-size:11px;background:rgba(139,92,246,0.1);color:var(--gradient-3);padding:4px 8px;border-radius:4px;">Đặc Tả Thực Thi Được</div>
+      </div>
+    </div>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Một ứng dụng hiện có tạo thành một đặc tả thực thi được.</div>
+    </blockquote>
+
+    <p>Những trường hợp này đã thúc đẩy việc phát triển <strong style="color:var(--accent);">coding agent không tương tác</strong> đáng tin cậy, có khả năng vận hành trên ý định đã đặc tả đầy đủ mà không cần làm rõ từ con người.</p>
+
+    <div class="card" style="text-align:center;background:linear-gradient(135deg, rgba(6,182,212,0.05), rgba(139,92,246,0.05));">
+      <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:var(--gradient-4);margin-bottom:16px;text-transform:uppercase;">Triển Khai Của Chúng Tôi</div>
+      <h3>Attractor</h3>
+      <p style="font-size:14px;margin-bottom:20px;">Coding agent không tương tác của chúng tôi, được thiết kế để vận hành không cần tương tác con người trên công việc đã đặc tả đầy đủ.</p>
+    </div>
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="filesystem.html">&larr; Hệ Thống Tệp</a>
+    <a class="btn" href="semport.html">Semport &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM Software Factory — Kỹ thuật</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container-wide">
+
+  <div class="center">
+    <div class="tag" style="color:var(--gradient-3);">Thực hành</div>
+    <h1>Các Kỹ Thuật</h1>
+    <p class="subtitle">Những mẫu hình chúng tôi thường xuyên quay lại khi xây dựng với Nông Trại Phần Mềm Thông Minh</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- DTU -->
+    <a href="dtu.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--accent);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Vũ Trụ Bản Sao Số (DTU) <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Nhân bản các hành vi có thể quan sát được từ bên ngoài của các phụ thuộc bên thứ ba quan trọng. Xác thực ở khối lượng và tốc độ vượt xa giới hạn production, với điều kiện test xác định và có thể phát lại.</p>
+    </div>
+    </a>
+
+    <!-- Gene Transfusion -->
+    <a href="gene-transfusion.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--accent-secondary);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Truyền Gene <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Di chuyển các mẫu hình đang hoạt động giữa các codebase bằng cách chỉ agent vào các mẫu mực cụ thể. Một giải pháp kèm tham chiếu tốt có thể được tái tạo trong ngữ cảnh mới.</p>
+    </div>
+    </a>
+
+    <!-- Filesystem -->
+    <a href="filesystem.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--gradient-3);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Hệ Thống Tệp <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Model có thể điều hướng repository nhanh chóng và tự điều chỉnh ngữ cảnh bằng cách đọc và ghi tệp. Thư mục, chỉ mục, và trạng thái trên đĩa trở thành nền tảng bộ nhớ thực tế.</p>
+    </div>
+    </a>
+
+    <!-- Shift Work -->
+    <a href="shift-work.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--gradient-4);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Làm Theo Ca <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Tách công việc tương tác khỏi công việc đã đặc tả đầy đủ. Khi ý định đã hoàn chỉnh (đặc tả, tests, ứng dụng có sẵn), agent có thể chạy end-to-end mà không cần trao đổi qua lại.</p>
+    </div>
+    </a>
+
+    <!-- Semport -->
+    <a href="semport.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--accent);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Semport <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Port tự động theo ngữ nghĩa, một lần hoặc liên tục. Di chuyển code giữa các ngôn ngữ hoặc framework trong khi bảo toàn ý định.</p>
+    </div>
+    </a>
+
+    <!-- Pyramid Summaries -->
+    <a href="pyramid-summaries.html" style="text-decoration:none;color:inherit;">
+    <div class="card" style="border-top: 3px solid var(--accent-secondary);cursor:pointer;transition:border-color 0.2s;">
+      <h3>Tóm Tắt Kim Tự Tháp <span style="float:right;color:var(--text-muted);">&rarr;</span></h3>
+      <p style="margin:0; font-size:14px;">Tóm tắt có thể đảo ngược ở nhiều tầng zoom. Nén ngữ cảnh mà không mất khả năng mở rộng trở lại chi tiết đầy đủ.</p>
+    </div>
+    </a>
+
+  </div>
+
+  <!-- Validation Constraint -->
+  <div class="validation-box">
+    <h2>Ràng Buộc Xác Thực</h2>
+    <p>Với zero code viết tay và zero review truyền thống, chúng tôi cần một hệ thống có thể:</p>
+    <ul>
+      <li>Phát triển từ các chuỗi đặc tả ngôn ngữ tự nhiên</li>
+      <li>Được xác thực tự động mà không cần kiểm tra ngữ nghĩa mã nguồn</li>
+    </ul>
+    <p>Code được đối xử tương tự như snapshot của ML model: <span class="highlight">trọng số mờ đục (opaque weights)</span> mà tính đúng đắn chỉ được suy ra từ hành vi có thể quan sát được từ bên ngoài. Cấu trúc nội bộ được coi là mờ đục.</p>
+  </div>
+
+  <div class="page-nav">
+    <a class="btn" href="principles.html">← Nguyên tắc</a>
+    <span></span>
+  </div>
+
+</div>
+
+</body>
+</html>

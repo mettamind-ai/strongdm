@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM Software Factory — Nguyên tắc</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html" class="active">Nguyên tắc</a>
+    <a href="techniques.html">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container-wide">
+
+  <div class="center">
+    <div class="tag">Triết lý cốt lõi</div>
+    <h1>Các Nguyên Tắc</h1>
+    <p class="subtitle">Hạt giống → Bộ xác thực → Vòng phản hồi. Token là nhiên liệu.</p>
+  </div>
+
+  <!-- Seed -->
+  <section>
+    <div class="card card-accent">
+      <div class="label label-accent">Điểm khởi đầu</div>
+      <h3 style="font-size:36px; margin-bottom:16px;">Hạt Giống</h3>
+      <p style="font-size:18px; max-width:700px; margin:0;">Mọi phần mềm đều cần một hạt giống ban đầu. Trước đây, bạn có thể gọi nó là PRD hoặc đặc tả. Ngày nay, nó có thể là vài câu, một ảnh chụp màn hình, hoặc một codebase có sẵn.</p>
+    </div>
+
+    <div class="arrow-down">▼</div>
+  </section>
+
+  <!-- The Loop -->
+  <section>
+    <div class="center" style="margin-bottom:32px;">
+      <span style="font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--text-muted); background:var(--card); padding:6px 16px; border-radius:20px; border:1px solid var(--border);">Vòng lặp</span>
+    </div>
+
+    <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+
+      <!-- Orbit SVG -->
+      <div style="position:absolute; width:100%; max-width:750px; height:256px; top:-2em; pointer-events:none;">
+        <svg width="100%" height="100%" viewBox="0 0 750 256" fill="none" style="overflow:visible;">
+          <!-- Dashed ellipse orbit -->
+          <ellipse cx="375" cy="128" rx="340" ry="98" stroke="var(--border)" stroke-width="2" fill="none" stroke-dasharray="8 8" opacity="0.5"/>
+          <!-- Green orbiting dot -->
+          <circle r="6" fill="var(--success)">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M375,30 A340,98 0 1,1 374.99,30"/>
+          </circle>
+          <!-- Blue orbiting dot, offset by 2s -->
+          <circle r="6" fill="var(--info)">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M375,30 A340,98 0 1,1 374.99,30" begin="2s"/>
+          </circle>
+          <!-- Direction arrows at top and bottom -->
+          <g transform="translate(375, 30)">
+            <polygon points="0,-8 6,4 -6,4" fill="var(--text-muted)"/>
+          </g>
+          <g transform="translate(375, 226)">
+            <polygon points="0,8 6,-4 -6,-4" fill="var(--text-muted)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Cards on top of orbit -->
+      <div class="loop-row" style="position:relative; z-index:1;">
+        <div class="card card-success" style="background:rgba(13,17,23,0.55); backdrop-filter:blur(6px); box-shadow:0 4px 24px rgba(0,0,0,0.3);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:var(--success); display:flex; align-items:center; justify-content:center; color:white; font-weight:700;">1</div>
+            <span class="label label-success" style="margin:0;">Xác thực</span>
+          </div>
+          <p style="margin:0; font-size:15px;">Bộ xác thực của bạn phải chạy end-to-end, càng gần môi trường thực càng tốt: khách hàng, tích hợp, kinh tế.</p>
+        </div>
+
+        <div class="card card-info" style="background:rgba(13,17,23,0.55); backdrop-filter:blur(6px); box-shadow:0 4px 24px rgba(0,0,0,0.3);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:var(--info); display:flex; align-items:center; justify-content:center; color:white; font-weight:700;">2</div>
+            <span class="label label-info" style="margin:0;">Phản hồi</span>
+          </div>
+          <p style="margin:0; font-size:15px;">Lấy mẫu đầu ra, đưa ngược lại làm đầu vào. Vòng kín này cho phép hệ thống tự sửa và tích lũy sự đúng đắn.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="loop-hint">Vòng lặp chạy cho đến khi các kịch bản holdout pass (và duy trì pass)</p>
+  </section>
+
+  <!-- Apply More Tokens -->
+  <section>
+    <div class="card card-warning">
+      <div class="label label-warning">Nhiên liệu</div>
+      <h3 style="font-size:32px; margin-bottom:20px;">Bơm Thêm Token</h3>
+      <p style="font-size:17px; max-width:640px; margin:0 auto 24px;">Lý thuyết về Xác thực và Phản hồi dễ hiểu. Thực hành đòi hỏi kỹ thuật tiên phong, sáng tạo. Với mỗi trở ngại, hãy hỏi: làm sao chuyển vấn đề này thành dạng mà model có thể hiểu?</p>
+      <div>
+        <span class="pill">Dùng traces</span>
+        <span class="pill">Chụp màn hình</span>
+        <span class="pill">Bản ghi hội thoại</span>
+        <span class="pill">Phát lại sự cố</span>
+        <span class="pill">Sử dụng đối kháng</span>
+        <span class="pill">Mô phỏng agentic</span>
+        <span class="pill">Khảo sát tức thì</span>
+        <span class="pill">Phỏng vấn khách hàng</span>
+        <span class="pill">Thử nghiệm độ co giãn giá</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-nav">
+    <a class="btn" href="index.html">← Câu chuyện</a>
+    <a class="btn" href="techniques.html">Kỹ thuật →</a>
+  </div>
+
+</div>
+
+</body>
+</html>

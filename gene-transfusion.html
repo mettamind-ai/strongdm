@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Truyền Gene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag" style="color:var(--accent-secondary);">Kỹ thuật</div>
+    <h1>Truyền Gene</h1>
+    <p class="subtitle">Di chuyển các mẫu hình đang hoạt động giữa các codebase bằng cách chỉ agent vào các mẫu mực cụ thể.</p>
+  </div>
+
+  <article>
+    <p style="font-size:18px;">Truyền gene là cách chúng tôi di chuyển một mẫu hình đang hoạt động từ codebase này sang codebase khác.</p>
+
+    <p>Ở dạng cơ bản, nó bao gồm việc hướng coding agent đến các mẫu mực cụ thể được rút ra từ bên trong hoặc bên ngoài kho code của StrongDM.</p>
+
+    <div class="card" style="border-left:4px solid var(--accent-secondary);padding:24px;">
+      <h4 style="margin-bottom:12px;color:var(--accent-secondary);">Ví dụ</h4>
+      <p style="margin:0;font-size:15px;">Xác định tích hợp Let's Encrypt của Caddy làm tham chiếu và sử dụng nó làm cơ sở để tổng hợp hỗ trợ Let's Encrypt gốc trong một module khác.</p>
+    </div>
+
+    <h2>Lan Truyền Mẫu Hình</h2>
+
+    <p>Khi được giới thiệu, các mẫu hình lan truyền qua kho code. Khi ghép một giải pháp với mẫu mực thân thiện với xác thực, chúng tôi có thể tái tạo nó trong các ngữ cảnh khác. Chúng tôi sử dụng điều này để:</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--accent-secondary);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--accent-secondary);">Ứng Dụng Đa Ngôn Ngữ</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Tái sử dụng mẫu hình giữa các ngôn ngữ (ví dụ: Go sang Python hoặc TypeScript)</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Nhúng Trực Tiếp</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Được nhúng trực tiếp vào hệ thống hiện có mà không có chi phí trừu tượng hóa</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-4);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-4);">Hiện Thân Thư Viện</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Được hiện thân dưới dạng thư viện hoặc quan hệ phụ thuộc truyền thống</div>
+      </div>
+    </div>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Truyền gene hoạt động như một cơ chế tái sử dụng cấu trúc mà không cần tác giả chung hay tái cấu trúc thủ công.</div>
+    </blockquote>
+
+    <h2>Quy Trình</h2>
+
+    <div class="card" style="padding:32px;">
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-secondary),var(--gradient-3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#0a0f1c;flex-shrink:0;">01</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;">Xác Định Mẫu Mực</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Tìm triển khai đang hoạt động (nội bộ hoặc bên ngoài)</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-secondary),var(--gradient-3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#0a0f1c;flex-shrink:0;">02</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;">Trích Xuất Mẫu Hình</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Agent phân tích cấu trúc, bất biến, trường hợp biên</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-secondary),var(--gradient-3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#0a0f1c;flex-shrink:0;">03</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;">Tổng Hợp</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Tạo triển khai tương đương trong ngữ cảnh đích</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-secondary),var(--gradient-3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#0a0f1c;flex-shrink:0;">04</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;">Xác Thực</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Kiểm tra hành vi xác nhận tính tương đương</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-secondary),var(--gradient-3));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#0a0f1c;flex-shrink:0;">05</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;">Lan Truyền</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Mẫu hình trở nên sẵn có cho các lần truyền gene trong tương lai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>Điểm mấu chốt là các mẫu hình mã hóa giải pháp cho các bài toán lặp đi lặp lại. Với mẫu mực hoạt động tốt và test đầy đủ, agent có thể tái tạo cùng hành vi trong ngữ cảnh mới trong khi thích ứng với các ràng buộc cục bộ.</p>
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="dtu.html">&larr; DTU</a>
+    <a class="btn" href="filesystem.html">Hệ Thống Tệp &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>

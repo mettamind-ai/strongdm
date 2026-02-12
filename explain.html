@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Giải Thích</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html">Kỹ thuật</a>
+    <a href="explain.html" class="active">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag">Ghi chú dịch thuật</div>
+    <h1>Tại Sao "Nông Trại" Chứ Không Phải "Nhà Máy"?</h1>
+    <p class="subtitle">Lý do chúng tôi chọn dịch "Software Factory" thành "Nông Trại Phần Mềm Thông Minh" trong phiên bản tiếng Việt.</p>
+  </div>
+
+  <article>
+
+    <h2>Bản gốc: Software Factory</h2>
+
+    <p>Trong bài viết gốc tiếng Anh, StrongDM dùng từ <strong>Software Factory</strong> (Nhà Máy Phần Mềm) để nhấn mạnh tính <em>tự động hóa cao</em>: đặc tả đi vào, code đi ra, giống dây chuyền sản xuất công nghiệp.</p>
+
+    <p>Đây là một hình ảnh mạnh, nhưng nó bỏ sót một khía cạnh quan trọng mà chính StrongDM cũng thừa nhận khi dùng cụm từ <strong>"grown software"</strong> (phần mềm được nuôi trồng) trong bài viết của họ.</p>
+
+    <h2>Vấn đề với "Nhà Máy"</h2>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Nhà máy gợi ý "xong là xong"</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Sản phẩm ra khỏi dây chuyền là hoàn chỉnh. Thực tế phần mềm không bao giờ "xong" -- nó cần maintain, adapt, và phát triển liên tục.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Nhà máy gợi ý sản phẩm đồng nhất</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Dây chuyền sản xuất hàng loạt giống nhau. Phần mềm thì mỗi lần lặp lại đều khác -- nó tiến hóa, thích nghi với môi trường thay đổi.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Nhà máy thiếu chiều thời gian</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Không có khái niệm mùa vụ, chu kỳ, hay sự trưởng thành dần dần qua nhiều vòng lặp.</div>
+      </div>
+    </div>
+
+    <h2>Tại sao "Nông Trại"?</h2>
+
+    <p>Hình ảnh nông trại truyền tải đúng hơn bản chất thực sự của việc phát triển phần mềm với AI:</p>
+
+    <div class="card" style="padding:32px;">
+      <div style="display:grid;gap:24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#127793;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Gieo hạt = Viết đặc tả</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Con người gieo ý tưởng dưới dạng spec và scenario, giống nông dân chọn giống và gieo hạt.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#128167;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Tưới nước & bón phân = Vòng lặp AI agent</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Agent tự động chạy, test, sửa, lặp lại -- giống hệ thống tưới tự động chăm sóc cây 24/7.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#127806;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Cây lớn dần = Phần mềm hoàn thiện qua nhiều vòng lặp</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Không phải làm xong 1 lần. Phần mềm dần trưởng thành, giống cây cần thời gian để ra quả.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#127744;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Thời tiết thay đổi = Môi trường thay đổi</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Requirement mới, dependency cập nhật, API thay đổi -- nông trại phải thích nghi, không thể đóng băng.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#128027;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Sâu bệnh = Bug & tech debt</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Cần phát hiện sớm và xử lý liên tục, không phải chỉ kiểm tra 1 lần rồi thôi.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:24px;flex-shrink:0;">&#129489;&#8205;&#127806;</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Chủ trại = Con người chỉ huy</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Con người đặt chiến lược, chọn hướng đi, giám sát. AI agent là hệ thống tự động thực thi.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Tại sao thêm "Thông Minh"?</h2>
+
+    <p>Nếu chỉ nói "Nông Trại Phần Mềm" thì thiếu yếu tố AI -- nghe như làm thủ công. Thêm <strong>"Thông Minh"</strong> vì:</p>
+
+    <ul>
+      <li>Người Việt đã quen khái niệm <strong>"nông trại thông minh"</strong> (smart farm) -- nơi IoT, drone, AI tự động hóa việc canh tác mà nông dân chỉ cần giám sát.</li>
+      <li>Truyền tải đúng tinh thần gốc: <em>tự động hóa cao bằng AI</em>, con người chỉ đặt mục tiêu và luật chơi.</li>
+      <li>Kết hợp cả 2 ý: <strong>nuôi trồng liên tục</strong> (vòng lặp, maintain, adapt) + <strong>AI tự động</strong> (agent chạy không ngừng).</li>
+    </ul>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Software Factory = nhấn mạnh sản xuất tự động.<br>Nông Trại Phần Mềm Thông Minh = nhấn mạnh nuôi trồng tự động, liên tục, thích nghi.</div>
+    </blockquote>
+
+    <p style="font-size:14px;color:var(--text-muted);margin-top:48px;">Ghi chú: Đây là lựa chọn dịch thuật có chủ đích của phiên bản tiếng Việt. Nội dung gốc tiếng Anh tại <a href="https://factory.strongdm.ai" target="_blank">factory.strongdm.ai</a> sử dụng thuật ngữ "Software Factory".</p>
+
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="techniques.html">&larr; Kỹ thuật</a>
+    <span></span>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Tóm Tắt Kim Tự Tháp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag" style="color:var(--accent-secondary);">Kỹ thuật</div>
+    <h1>Tóm Tắt Kim Tự Tháp</h1>
+    <p class="subtitle">Tóm tắt có thể đảo ngược ở nhiều tầng zoom. Nén ngữ cảnh mà không mất khả năng mở rộng trở lại chi tiết đầy đủ.</p>
+  </div>
+
+  <article>
+    <p style="font-size:18px;">Lấy cảm hứng ban đầu từ các định dạng ảnh đa độ phân giải (như Pyramid TIFF) và map tile phổ biến trong các ứng dụng như Google Maps, Tóm Tắt Kim Tự Tháp cho phép bất kỳ agent nào phóng to hoặc thu nhỏ trên bất kỳ phần ngữ nghĩa nào.</p>
+
+    <h2>Chi Tiết Thu Gọn</h2>
+
+    <p>Cụ thể: "Tóm tắt bug report này trong 2 từ. Giờ 4. Giờ 8. Giờ 16." Và cứ thế. Mỗi tầng giữ lại ý nghĩa cốt lõi trong khi mở rộng hoặc thu hẹp chi tiết khi cần.</p>
+
+    <p>Tóm tắt thu gọn cho phép <strong>liệt kê nhanh</strong> với ít xáo trộn ngữ cảnh hơn. Agent có thể khảo sát hàng trăm mục ở tầng 2 từ, xác định những mục thú vị, và chỉ mở rộng những mục đó.</p>
+
+    <h2>Thử Nghiệm</h2>
+
+    <p>Nhấp để mở rộng, nhấp phải để thu gọn. Mỗi tầng nhân đôi chi tiết:</p>
+
+    <div id="pyramid-demo" style="margin-bottom:32px;"></div>
+
+    <script>
+    var items = [
+      { title: "Báo Cáo Lỗi", summaries: [
+        "Đăng nhập thất bại âm thầm trên Safari.",
+        "Đăng nhập thất bại âm thầm trên Safari. OAuth callback đánh mất tham số state.",
+        "Đăng nhập thất bại âm thầm trên Safari. OAuth callback đánh mất tham số state. ITP của Safari xóa cookie trước khi redirect hoàn tất, mất token CSRF.",
+        "Đăng nhập thất bại âm thầm trên Safari. OAuth callback đánh mất tham số state. ITP của Safari xóa cookie trước khi redirect hoàn tất, mất token CSRF. Giải pháp tạm: dùng sessionStorage cho state. Ảnh hưởng 12% người dùng theo analytics.",
+        "Đăng nhập thất bại âm thầm trên Safari. OAuth callback đánh mất tham số state. ITP của Safari xóa cookie trước khi redirect hoàn tất, mất token CSRF. Giải pháp tạm: dùng sessionStorage cho state. Ảnh hưởng 12% người dùng theo analytics. Nguyên nhân gốc: cookie SameSite=Lax không tồn tại qua redirect cross-origin trên Safari 16.4+. Sửa vĩnh viễn cần partitioned cookies hoặc chuyển state sang URL fragment. Liên quan: GitHub issue #4521, Slack thread tháng 3."
+      ]},
+      { title: "Yêu Cầu Tính Năng", summaries: [
+        "Người dùng muốn xuất hàng loạt.",
+        "Người dùng muốn xuất hàng loạt. Giới hạn hiện tại 100 bản ghi gây khó chịu cho power user.",
+        "Người dùng muốn xuất hàng loạt. Giới hạn hiện tại 100 bản ghi gây khó chịu cho power user. Ba khách hàng enterprise đã escalate trong tháng. Đội compliance cần toàn bộ audit log.",
+        "Người dùng muốn xuất hàng loạt. Giới hạn hiện tại 100 bản ghi gây khó chịu cho power user. Ba khách hàng enterprise đã escalate trong tháng. Đội compliance cần toàn bộ audit log. Ràng buộc kỹ thuật: API timeout 30s giới hạn kích thước response. Streaming export sẽ giải quyết vấn đề.",
+        "Người dùng muốn xuất hàng loạt. Giới hạn hiện tại 100 bản ghi gây khó chịu cho power user. Ba khách hàng enterprise đã escalate trong tháng. Đội compliance cần toàn bộ audit log. Ràng buộc kỹ thuật: API timeout 30s giới hạn kích thước response. Streaming export sẽ giải quyết vấn đề. Đề xuất: async job queue với S3 presigned URL. Ước lượng: 2 tuần. Phụ thuộc: không. Doanh thu rủi ro: $180k ARR từ ba tài khoản. PM priority: P1 cho Q2."
+      ]},
+      { title: "Báo Cáo Sự Cố", summaries: [
+        "Chuyển đổi database dự phòng gây gián đoạn 4 phút.",
+        "Chuyển đổi database dự phòng gây gián đoạn 4 phút. Primary hết dung lượng đĩa. Thăng cấp replica mất 90 giây.",
+        "Chuyển đổi database dự phòng gây gián đoạn 4 phút. Primary hết dung lượng đĩa. Thăng cấp replica mất 90 giây. Connection pool cạn kiệt thêm 2.5 phút. 847 request thất bại trong khoảng thời gian đó.",
+        "Chuyển đổi database dự phòng gây gián đoạn 4 phút. Primary hết dung lượng đĩa. Thăng cấp replica mất 90 giây. Connection pool cạn kiệt thêm 2.5 phút. 847 request thất bại trong khoảng thời gian đó. Nguyên nhân gốc: chính sách retention log chưa bao giờ được áp dụng. Cảnh báo đĩa đã kích hoạt nhưng được chuyển sai kênh.",
+        "Chuyển đổi database dự phòng gây gián đoạn 4 phút. Primary hết dung lượng đĩa. Thăng cấp replica mất 90 giây. Connection pool cạn kiệt thêm 2.5 phút. 847 request thất bại trong khoảng thời gian đó. Nguyên nhân gốc: chính sách retention log chưa bao giờ được áp dụng. Cảnh báo đĩa đã kích hoạt nhưng được chuyển sai kênh. Hành động: (1) sửa routing cảnh báo, (2) triển khai log rotation, (3) thêm circuit breaker cho connection pool, (4) runbook cho manual failover. Timeline: 14:32 đĩa đầy, 14:33 bắt đầu failover, 14:34 replica thăng cấp, 14:36 pool phục hồi, 14:36 tất cả dịch vụ xanh."
+      ]}
+    ];
+    var wordCounts = [8, 16, 32, 64, 128];
+    var levels = {};
+    var container = document.getElementById("pyramid-demo");
+
+    items.forEach(function(item, idx) {
+      levels[idx] = 0;
+      var wrapper = document.createElement("div");
+      wrapper.style.marginBottom = "24px";
+      wrapper.id = "pyr-" + idx;
+
+      function render() {
+        var lv = levels[idx];
+        var isMax = lv >= item.summaries.length - 1;
+        wrapper.innerHTML =
+          '<div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">' + item.title + '</div>' +
+          '<div id="pyr-text-' + idx + '" style="padding:16px;background:' + (isMax ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.03)') + ';border-radius:8px;border-left:3px solid var(--accent-secondary);cursor:' + (isMax ? 'default' : 'pointer') + ';transition:background 0.2s;font-size:15px;line-height:1.7;color:var(--text);">' +
+            item.summaries[lv] + (isMax ? '' : '<span style="margin-left:8px;color:var(--accent);font-size:14px;">+</span>') +
+          '</div>' +
+          '<div style="display:flex;align-items:center;gap:12px;margin-top:8px;font-size:12px;color:var(--text-muted);">' +
+            '<div style="display:flex;gap:3px;">' +
+              wordCounts.map(function(w, i) {
+                return '<div style="width:16px;height:4px;border-radius:2px;background:' + (i <= lv ? 'var(--accent-secondary)' : 'rgba(255,255,255,0.1)') + ';transition:background 0.2s;"></div>';
+              }).join('') +
+            '</div>' +
+            '<span style="font-family:monospace;">~' + wordCounts[lv] + 'w</span>' +
+            (lv > 0 ? '<span>· nhấp chuột phải để thu gọn</span>' : '') +
+          '</div>';
+
+        var textEl = wrapper.querySelector('[id="pyr-text-' + idx + '"]');
+        textEl.addEventListener("click", function() {
+          if (!isMax) { levels[idx]++; render(); }
+        });
+        textEl.addEventListener("contextmenu", function(e) {
+          e.preventDefault();
+          if (levels[idx] > 0) { levels[idx]--; render(); }
+        });
+      }
+      render();
+      container.appendChild(wrapper);
+    });
+    </script>
+
+    <h2>Kết Hợp Với MapReduce</h2>
+
+    <p>Một mẫu hình rất phổ biến chúng tôi phát hiện là kết hợp Tóm Tắt Kim Tự Tháp với MapReduce và Clustering, sử dụng model phù hợp ở mỗi giai đoạn. Hiệu quả thực: một model mạnh với context window hạn chế có thể "nhìn thấy" nhiều hơn nhiều về địa hình của bài toán, sau đó phóng to khi cần thông qua tool calling.</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;">
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Map</h3>
+        <p style="font-size:14px;margin:0;color:var(--text-secondary);">Tạo tóm tắt kim tự tháp cho mỗi mục song song</p>
+      </div>
+      <div class="card" style="padding:20px;margin:0;">
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Cluster</h3>
+        <p style="font-size:14px;margin:0;color:var(--text-secondary);">Nhóm các mục liên quan theo biểu diễn nén của chúng</p>
+      </div>
+      <div class="card" style="padding:20px;margin:0;">
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Reduce</h3>
+        <p style="font-size:14px;margin:0;color:var(--text-secondary);">Tổng hợp insight qua các cluster, mở rộng chi tiết khi cần</p>
+      </div>
+    </div>
+
+    <h2>Phép Tương Đồng Lãnh Đạo</h2>
+
+    <p>Mẫu hình phản ánh cách một giám đốc điều hành đào sâu trong quá trình chẩn đoán: bắt đầu với cái nhìn tổng quan về tổ chức, sau đó phòng ban, rồi nhóm, và cuối cùng cá nhân, mở rộng chi tiết chỉ nơi tín hiệu đòi hỏi.</p>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Context window là hữu hạn. Sự chú ý là quý giá. Tóm Tắt Kim Tự Tháp cho phép bạn nhìn thấy cả khu rừng lẫn từng cái cây, chỉ là không cùng một lúc.</div>
+    </blockquote>
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="semport.html">&larr; Semport</a>
+    <a class="btn" href="techniques.html">Tất cả Kỹ thuật &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StrongDM — Hệ Thống Tệp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">StrongDM AI</a>
+  <div class="nav-links">
+    <a href="index.html">Câu chuyện</a>
+    <a href="principles.html">Nguyên tắc</a>
+    <a href="techniques.html" class="active">Kỹ thuật</a>
+    <a href="explain.html">Giải thích</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="center">
+    <div class="tag" style="color:var(--gradient-3);">Kỹ thuật</div>
+    <h1>Hệ Thống Tệp</h1>
+    <p class="subtitle">Trạng thái thế giới có thể thay đổi và kiểm tra được. Agent điều hướng và định hình ngữ cảnh của chính mình.</p>
+  </div>
+
+  <article>
+    <p style="font-size:18px;">Ngay từ đầu, chúng tôi quan sát thấy: agent đáng tin cậy xây dựng chỉ mục trên đĩa, ghi trạng thái tạm, và tái tạo ngữ cảnh thông qua <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;">rg</code>/open.</p>
+
+    <div class="card" style="border-left:4px solid var(--gradient-3);padding:24px;">
+      <h4 style="margin-bottom:12px;color:var(--gradient-3);">Thí Nghiệm Tư Duy</h4>
+      <p style="margin:0;font-size:15px;font-style:italic;">Nếu tất cả những gì bạn có là <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;">$HOME</code> và <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;">vi</code>, bạn sẽ theo dõi email vừa gửi, danh sách mua sắm, cuộc trò chuyện Slack, hay ràng buộc tương thích như kích thước lốp xe so với vành bánh xe như thế nào?</p>
+    </div>
+
+    <h2>Câu Trả Lời</h2>
+
+    <p>Câu trả lời rất đơn giản:</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;display:flex;gap:16px;align-items:center;">
+        <div style="font-size:24px;">&#128193;</div>
+        <div style="font-weight:500;">Tạo thư mục với tên có ý nghĩa</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;display:flex;gap:16px;align-items:center;">
+        <div style="font-size:24px;">&#128203;</div>
+        <div style="font-weight:500;">Tạo chỉ mục (thường là Markdown)</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;display:flex;gap:16px;align-items:center;">
+        <div style="font-size:24px;">&#128190;</div>
+        <div style="font-weight:500;">Ghi trạng thái ra đĩa</div>
+      </div>
+    </div>
+
+    <p>Trong thực tế, trạng thái này thường là <strong>Markdown</strong>, nhưng cũng thường xuyên là <strong>JSON</strong> hoặc <strong>YAML</strong>, và trong các trường hợp cụ thể là <strong>XML</strong>.</p>
+
+    <h2>Phân Loại Thể Loại (Genrefying)</h2>
+
+    <p>Khi hệ thống phân cấp khái niệm phát triển, nó chắc chắn trở nên mất cân bằng, dư thừa, hoặc gây nhầm lẫn. Tại thời điểm đó, hành động khắc phục giống như đối với người vận hành: <strong style="color:var(--accent);">tái tổ chức</strong>.</p>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Trong khoa học thư viện, quá trình này được gọi là <em>genrefying</em>: tái cấu trúc thông tin để tối ưu hóa việc truy xuất trong tương lai.</div>
+    </blockquote>
+
+    <p>Về mặt chức năng, điều này giống với một thao tác cấu trúc dữ liệu quen thuộc: <strong>cân bằng lại và đánh chỉ mục lại</strong>. Ở đây nó được trung gian bởi LLM hoạt động trực tiếp trên hệ thống tệp.</p>
+
+    <h2>Hệ Quả</h2>
+
+    <div class="card" style="padding:32px;">
+      <div style="display:grid;gap:24px;">
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Ngữ Cảnh Tự Tổ Chức</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Agent có thể tạo và duy trì cấu trúc tri thức riêng khi làm việc</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Bộ Nhớ Bền Vững</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Trạng thái tồn tại qua các phiên làm việc, giúp công việc dài hạn trở nên khả thi qua nhiều lần gọi model</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Trạng Thái Kiểm Tra Được</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Con người có thể kiểm tra, sửa đổi, hoặc đặt lại trạng thái agent bất cứ lúc nào</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Tri Thức Kết Hợp</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Nhiều agent có thể chia sẻ và xây dựng trên cùng trạng thái hệ thống tệp</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Hệ thống tệp trở thành nền tảng cho bộ nhớ, trạng thái, và phối hợp của agent. Nó vừa là kho lưu trữ sản phẩm vừa là <strong>trạng thái thế giới có thể thay đổi và kiểm tra được</strong>.</p>
+  </article>
+
+  <div class="page-nav">
+    <a class="btn" href="gene-transfusion.html">&larr; Truyền Gene</a>
+    <a class="btn" href="shift-work.html">Làm Theo Ca &rarr;</a>
+  </div>
+
+</div>
+
+</body>
+</html>
