@@ -210,3 +210,9 @@ hr {
 .validation-box h2 { margin-top: 0; }
 .validation-box p, .validation-box li { font-size: 16px; }
 .validation-box .highlight { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .nav-brand { display: none; }
+  nav { justify-content: center; }
+  .nav-links { gap: 16px; }
+}
