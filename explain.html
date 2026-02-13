@@ -394,6 +394,142 @@
       <div style="font-size:18px;font-style:italic;line-height:1.6;">Nếu bạn đang tự mình khám phá con đường này và thấy những điều tương tự, đó không phải trùng hợp. Đó là quy luật.</div>
     </blockquote>
 
+    <hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
+
+    <h2>OpenAI Và Harness Engineering: Nguồn Xác Nhận Thứ Ba</h2>
+
+    <p>Tháng 2/2026, Ryan Lopopolo từ OpenAI công bố bài viết <a href="https://openai.com/index/harness-engineering/" target="_blank">"Harness Engineering"</a> -- kể về việc xây dựng một sản phẩm nội bộ với <strong>0 dòng code viết tay</strong>, toàn bộ do Codex agent tạo ra. Đây là nguồn xác nhận thứ ba cho những nguyên tắc mà cả StrongDM và chúng tôi đã độc lập khám phá.</p>
+
+    <h3>Harness là gì?</h3>
+
+    <div class="card" style="padding:24px;border-left:4px solid var(--accent);margin:24px 0;">
+      <p style="margin:0 0 16px;font-size:15px;line-height:1.7;">Nghĩa gốc của <strong>"harness"</strong> là bộ dây cương dùng để điều hướng ngựa. Trong kỹ thuật phần mềm, nó được mượn nghĩa để chỉ một hệ thống dùng để điều khiển, kiểm soát và đánh giá một chương trình khi chạy.</p>
+      <p style="margin:0 0 16px;font-size:15px;line-height:1.7;">Trong bối cảnh agent và AI, "harness" không chỉ là bộ test. Nó là <strong>toàn bộ môi trường bao quanh agent</strong>: nơi quy định luật chơi, cách đo lường kết quả, cách phát hiện sai và cách phản hồi để agent tự sửa. Giống như một phòng thí nghiệm có thiết bị đo, quy trình kiểm tra và tiêu chuẩn đánh giá.</p>
+      <p style="margin:0;font-size:15px;line-height:1.7;">Vì vậy, <strong>"harness engineering"</strong> có thể hiểu là: thiết kế và xây dựng hệ thống kiểm soát này một cách có chủ đích, để AI làm việc đúng hướng mà không cần con người can thiệp từng dòng code.</p>
+    </div>
+
+    <h3>Ba đội ngũ, cùng kết luận</h3>
+
+    <p>Điều đáng chú ý nhất: OpenAI, StrongDM, và chúng tôi -- ba đội ngũ ở ba nơi, với ba sản phẩm khác nhau -- đều đi đến gần như cùng một bộ nguyên tắc:</p>
+
+    <div style="display:grid;gap:2px;margin:32px 0;">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:12px 16px;background:var(--card);border-radius:12px 0 0 0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gradient-3);">OpenAI</div>
+        </div>
+        <div style="padding:12px 16px;background:var(--card);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-secondary);">StrongDM</div>
+        </div>
+        <div style="padding:12px 16px;background:var(--card);border-radius:0 12px 0 0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);">MOS</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">0 dòng code viết tay</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Humans steer, agents execute</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Code không nên được viết bởi con người</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Phát triển phi tương tác</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">COA là trung tâm</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Giao mọi việc cho agent</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Repo là nguồn chân lý</div>
+          <div style="font-size:12px;color:var(--text-secondary);">AGENTS.md = mục lục, docs/ = hệ thống</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Hệ Thống Tệp</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Filesystem là bộ nhớ agent</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Repo là công trường</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Spec/doc là bộ nhớ hệ thống</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Agent chạy 6 tiếng liên tục</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Thường khi con người ngủ</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Attractor</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Agent không tương tác, chạy xuyên suốt</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Night Mode</div>
+          <div style="font-size:12px;color:var(--text-secondary);">30 agent chạy qua đêm</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Đặt ranh giới cứng, tự do bên trong</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Enforce architecture, not implementation</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Kịch bản holdout</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Xác thực bằng kịch bản giữ riêng</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Rules chặt + feedback loops</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Spec rõ + auto-recovery</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+        <div style="padding:14px 16px;background:var(--card);border-radius:0 0 0 12px;">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Dọn rác liên tục</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Garbage collection cho tech debt</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Sự ngây thơ có chủ đích</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Phá bỏ giới hạn cũ Software 1.0</div>
+        </div>
+        <div style="padding:14px 16px;background:var(--card);border-radius:0 0 12px 0;">
+          <div style="font-weight:600;font-size:13px;margin-bottom:4px;">Pain > Gain thì dừng</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Đo hiệu quả liên tục</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h3>Bài học riêng từ OpenAI</h3>
+
+    <p>Ngoài những điểm trùng khớp, OpenAI chia sẻ thêm một số bài học giá trị từ thực chiến:</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">AGENTS.md là mục lục, không phải bách khoa toàn thư</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Họ thử nhồi mọi thứ vào một file lớn -- thất bại. Giải pháp: AGENTS.md ngắn (~100 dòng) chỉ đường đến docs/ có cấu trúc. Giống nguyên tắc "progressive disclosure" -- cho agent bản đồ, không phải sách nghìn trang.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Tối ưu cho agent đọc được, không phải cho người</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Cái gì agent không truy cập được trong ngữ cảnh thì "không tồn tại". Cuộc trò chuyện Slack, kiến thức trong đầu người -- đều vô hình với agent. Phải chuyển mọi thứ vào repo dưới dạng markdown.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">Dọn rác như garbage collector</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Ban đầu dành 20% thời gian (mỗi thứ Sáu) dọn "AI slop" -- không scale được. Giải pháp: mã hóa "golden principles" vào repo, agent tự động quét và mở PR sửa chữa theo lịch.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--gradient-3);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--gradient-3);">1 triệu dòng code, 3 kỹ sư, 5 tháng</div>
+        <div style="font-size:14px;color:var(--text-secondary);">~1.500 PR merged, trung bình 3.5 PR/kỹ sư/ngày. Nhanh gấp 10 lần so với viết tay. Và throughput <em>tăng</em> khi đội mở rộng từ 3 lên 7 người -- ngược với quy luật thông thường.</div>
+      </div>
+    </div>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Ba đội ngũ, ba sản phẩm, ba góc nhìn -- nhưng cùng một bộ quy luật. Khi những người thực hành nghiêm túc ở những nơi khác nhau đều tự tìm ra cùng câu trả lời, đó không còn là ý kiến cá nhân. Đó là bản chất của việc phát triển phần mềm trong kỷ nguyên AI.</div>
+    </blockquote>
+
   </article>
 
   <div class="page-nav">
