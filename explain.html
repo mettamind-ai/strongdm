@@ -526,6 +526,122 @@
       </div>
     </div>
 
+    <h3>Vòng lặp Harness Engineering</h3>
+
+    <p>Toàn bộ quy trình harness engineering có thể tóm gọn trong một vòng lặp:</p>
+
+    <div style="margin:32px 0;overflow-x:auto;">
+      <svg viewBox="0 0 720 880" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:0 auto;display:block;font-family:system-ui,-apple-system,sans-serif;">
+        <defs>
+          <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="var(--text)" opacity="0.6"/></marker>
+          <marker id="ah-r" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f87171" opacity="0.8"/></marker>
+          <marker id="ah-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ade80" opacity="0.8"/></marker>
+        </defs>
+
+        <!-- A: Engineer -->
+        <rect x="200" y="10" width="320" height="44" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="360" y="37" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="600">Engineer viết prompt / acceptance criteria</text>
+
+        <!-- Arrow A→B -->
+        <line x1="360" y1="54" x2="360" y2="76" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- B: Agent plan -->
+        <rect x="200" y="80" width="320" height="44" rx="8" fill="var(--card)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="360" y="107" text-anchor="middle" fill="var(--text)" font-size="13">Agent lập kế hoạch + gọi tool</text>
+
+        <!-- Arrow B→C -->
+        <line x1="360" y1="124" x2="360" y2="146" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- C: Code change -->
+        <rect x="200" y="150" width="320" height="44" rx="8" fill="var(--card)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="360" y="177" text-anchor="middle" fill="var(--text)" font-size="13">Thay đổi code trong workspace</text>
+
+        <!-- Arrow C→D -->
+        <line x1="360" y1="194" x2="360" y2="216" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- D: Harness -->
+        <rect x="160" y="220" width="400" height="44" rx="8" fill="var(--card)" stroke="var(--accent-secondary)" stroke-width="2"/>
+        <text x="360" y="247" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="600">🔧 Harness: lint + unit/integration + scenario eval</text>
+
+        <!-- Arrow D→E -->
+        <line x1="360" y1="264" x2="360" y2="290" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- E: Decision diamond -->
+        <polygon points="360,290 450,330 360,370 270,330" fill="var(--card)" stroke="var(--accent-secondary)" stroke-width="2"/>
+        <text x="360" y="335" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">Pass tất cả gate?</text>
+
+        <!-- E→F (Không) -->
+        <line x1="270" y1="330" x2="120" y2="330" stroke="#f87171" stroke-width="1.5" opacity="0.7"/>
+        <line x1="120" y1="330" x2="120" y2="390" stroke="#f87171" stroke-width="1.5" opacity="0.7" marker-end="url(#ah-r)"/>
+        <text x="190" y="322" fill="#f87171" font-size="12" font-weight="600">Không</text>
+
+        <!-- F: Collect signals -->
+        <rect x="20" y="394" width="280" height="44" rx="8" fill="var(--card)" stroke="#f87171" stroke-width="1.5"/>
+        <text x="160" y="417" text-anchor="middle" fill="var(--text)" font-size="12">Thu thập tín hiệu: logs/metrics/snapshots</text>
+
+        <!-- F→G -->
+        <line x1="160" y1="438" x2="160" y2="460" stroke="#f87171" stroke-width="1.5" opacity="0.7" marker-end="url(#ah-r)"/>
+
+        <!-- G: Agent fix -->
+        <rect x="20" y="464" width="280" height="44" rx="8" fill="var(--card)" stroke="#f87171" stroke-width="1.5"/>
+        <text x="160" y="483" text-anchor="middle" fill="var(--text)" font-size="12">Agent sửa, refactor,</text>
+        <text x="160" y="498" text-anchor="middle" fill="var(--text)" font-size="12">cập nhật docs/rules nếu cần</text>
+
+        <!-- G→D (loop back) -->
+        <line x1="40" y1="464" x2="40" y2="242" stroke="#f87171" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,4"/>
+        <line x1="40" y1="242" x2="156" y2="242" stroke="#f87171" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,4" marker-end="url(#ah-r)"/>
+
+        <!-- E→H (Có) -->
+        <line x1="450" y1="330" x2="560" y2="330" stroke="#4ade80" stroke-width="1.5" opacity="0.7"/>
+        <line x1="560" y1="330" x2="560" y2="460" stroke="#4ade80" stroke-width="1.5" opacity="0.7" marker-end="url(#ah-g)"/>
+        <text x="480" y="322" fill="#4ade80" font-size="12" font-weight="600">Có</text>
+
+        <!-- H: Open PR -->
+        <rect x="420" y="464" width="280" height="44" rx="8" fill="var(--card)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="560" y="491" text-anchor="middle" fill="var(--text)" font-size="12">Agent mở PR + tự review</text>
+
+        <!-- H→I -->
+        <line x1="560" y1="508" x2="560" y2="530" stroke="#4ade80" stroke-width="1.5" opacity="0.7" marker-end="url(#ah-g)"/>
+
+        <!-- I: Review -->
+        <rect x="420" y="534" width="280" height="44" rx="8" fill="var(--card)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="560" y="561" text-anchor="middle" fill="var(--text)" font-size="12">Agent reviewers / human review</text>
+
+        <!-- I→J -->
+        <line x1="560" y1="578" x2="560" y2="600" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- J: Merge decision -->
+        <polygon points="560,604 640,640 560,676 480,640" fill="var(--card)" stroke="var(--accent-secondary)" stroke-width="2"/>
+        <text x="560" y="644" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="600">Đạt tiêu chí merge?</text>
+
+        <!-- J→G (Không) -->
+        <line x1="480" y1="640" x2="304" y2="500" stroke="#f87171" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,4" marker-end="url(#ah-r)"/>
+        <text x="370" y="558" fill="#f87171" font-size="12" font-weight="600">Không</text>
+
+        <!-- J→K (Có) -->
+        <line x1="560" y1="676" x2="560" y2="706" stroke="#4ade80" stroke-width="1.5" opacity="0.7" marker-end="url(#ah-g)"/>
+        <text x="580" y="696" fill="#4ade80" font-size="12" font-weight="600">Có</text>
+
+        <!-- K: Merge -->
+        <rect x="420" y="710" width="280" height="44" rx="8" fill="var(--card)" stroke="#4ade80" stroke-width="2"/>
+        <text x="560" y="737" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="600">✅ Merge + deploy</text>
+
+        <!-- K→L -->
+        <line x1="560" y1="754" x2="560" y2="776" stroke="var(--text)" stroke-width="1.5" opacity="0.5" marker-end="url(#ah)"/>
+
+        <!-- L: GC agents -->
+        <rect x="380" y="780" width="360" height="44" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="560" y="807" text-anchor="middle" fill="var(--text)" font-size="12">♻️ Background GC agents: quét drift, mở PR cleanup</text>
+
+        <!-- L→D (loop back) -->
+        <line x1="700" y1="802" x2="700" y2="242" stroke="var(--accent)" stroke-width="1.5" opacity="0.4" stroke-dasharray="6,4"/>
+        <line x1="700" y1="242" x2="564" y2="242" stroke="var(--accent)" stroke-width="1.5" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#ah)"/>
+
+        <!-- Legend -->
+        <text x="360" y="860" text-anchor="middle" fill="var(--text-secondary)" font-size="11">🔴 Vòng sửa lỗi  ·  🟢 Luồng thành công  ·  ♻️ Vòng dọn rác liên tục</text>
+      </svg>
+    </div>
+
     <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
       <div style="font-size:18px;font-style:italic;line-height:1.6;">Ba đội ngũ, ba sản phẩm, ba góc nhìn -- nhưng cùng một bộ quy luật. Khi những người thực hành nghiêm túc ở những nơi khác nhau đều tự tìm ra cùng câu trả lời, đó không còn là ý kiến cá nhân. Đó là bản chất của việc phát triển phần mềm trong kỷ nguyên AI.</div>
     </blockquote>
