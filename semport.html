@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StrongDM — Semport</title>
+  <title>StrongDM — Chuyển Ngữ</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,12 +22,12 @@
 
   <div class="center">
     <div class="tag" style="color:var(--accent);">Kỹ thuật</div>
-    <h1>Semport</h1>
-    <p class="subtitle">Port tự động theo ngữ nghĩa, một lần hoặc liên tục. Di chuyển code giữa các ngôn ngữ hoặc framework trong khi bảo toàn ý định.</p>
+    <h1>Chuyển Ngữ</h1>
+    <p class="subtitle">Chuyển đổi tự động theo ngữ nghĩa, một lần hoặc liên tục. Di chuyển code giữa các ngôn ngữ hoặc framework trong khi bảo toàn ý định.</p>
   </div>
 
   <article>
-    <p style="font-size:18px;">Semantic Port (Semport) là thuật ngữ bao quát chúng tôi sử dụng cho các port tự động một lần hoặc liên tục, thường giữa các ngôn ngữ.</p>
+    <p style="font-size:18px;">Semantic Port (Chuyển Ngữ) là thuật ngữ bao quát chúng tôi sử dụng cho các chuyển đổi tự động một lần hoặc liên tục, thường giữa các ngôn ngữ.</p>
 
     <h2>Học Từ Những Người Giỏi Nhất</h2>
 
@@ -35,36 +35,35 @@
 
     <h2>Phụ Thuộc Thông Qua Dịch Thuật</h2>
 
-    <p>Semport chuyển giao thay đổi từ upstream mà chúng tôi tin tưởng vào thư viện nội bộ mà chúng tôi có thể sử dụng. Đó là một hình thức phụ thuộc, giống thư viện truyền thống, nhưng phụ thuộc đó cũng có thể được viết lại và thích ứng với nhu cầu cụ thể của chúng tôi, tự động, trong khi các thành viên nhóm ngủ.</p>
+    <p>Chuyển Ngữ chuyển giao thay đổi từ upstream mà chúng tôi tin tưởng vào thư viện nội bộ mà chúng tôi có thể sử dụng. Đó là một hình thức phụ thuộc, giống thư viện truyền thống, nhưng phụ thuộc đó cũng có thể được viết lại và thích ứng với nhu cầu cụ thể của chúng tôi, tự động, trong khi các thành viên nhóm ngủ.</p>
 
     <div class="card" style="padding:28px 32px;margin:40px 0;">
       <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Trong Thực Tế</div>
-      <p style="font-size:15px;line-height:1.8;">Mỗi ngày chúng tôi khởi chạy kiểm tra tự động <a href="https://github.com/openai/openai-agents-python" target="_blank">openai/openai-agents-python</a>. Chúng tôi thấy mô tả các nguyên thủy agentic này phản ánh tốt nhất cách sử dụng dự kiến của OpenAI API. Chúng tôi muốn đưa những ý định và mẫu hình đó vào sản phẩm, tuy nhiên chúng tôi cần chúng bằng Go.</p>
-      <p style="font-size:15px;line-height:1.8;">Mỗi khi quy trình Semport thức dậy, nó xem xét các commit gần nhất và đánh giá liệu chúng có áp dụng được cho triển khai Go hay không. Hóa ra có một số lỗi Python không thể biểu diễn trong Go, hoặc đã được coding agent bắt trong lần port ban đầu. Attractor ghi sổ bản sửa, chạy test, gắn tag phát hành.</p>
-      <p style="font-size:15px;line-height:1.8;">Một trong những khía cạnh sâu sắc nhất của Semport là chúng tôi ít nghĩ về nó: đội ngũ OpenAI làm việc tuyệt vời (bằng Python), và chúng tôi nhận được (bằng Go) và nó chỉ đơn giản... hoạt động.</p>
-      <p style="font-size:15px;line-height:1.8;margin:0;">Nếu bạn đã đọc đến đây, chúng tôi tò mò: liệu chúng tôi có nên xuất bản <strong>openai-agents-go</strong> và <strong>openai-agents-rust</strong> không?</p>
+      <p style="font-size:15px;line-height:1.8;">Mỗi ngày chúng tôi khởi chạy kiểm tra tự động <a href="https://github.com/openai/openai-agents-python" target="_blank">openai/openai-agents-python</a>. Chúng tôi thấy mô tả các nguyên thủy tự chủ (agentic primitives) này phản ánh tốt nhất cách sử dụng dự kiến của OpenAI API. Chúng tôi muốn đưa những ý định và mẫu hình đó vào sản phẩm, tuy nhiên chúng tôi cần chúng bằng Go.</p>
+      <p style="font-size:15px;line-height:1.8;">Mỗi khi quy trình Chuyển Ngữ thức dậy, nó xem xét các commit gần nhất và đánh giá liệu chúng có áp dụng được cho triển khai Go hay không. Hóa ra có một số lỗi Python không thể biểu diễn trong Go, hoặc đã được coding agent bắt trong lần chuyển đổi ban đầu. Attractor ghi sổ bản sửa, chạy test, gắn tag phát hành.</p>
+      <p style="font-size:15px;line-height:1.8;">Điều tuyệt vời nhất của Chuyển Ngữ là chúng tôi gần như quên mất nó tồn tại: đội ngũ OpenAI cứ việc phát triển bằng Python, còn chúng tôi tự động nhận được phiên bản Go -- và mọi thứ cứ thế chạy ngon.</p>
     </div>
 
     <h2>Một Lần vs. Liên Tục</h2>
 
     <div style="display:grid;gap:16px;margin:24px 0 32px;">
       <div class="card" style="padding:20px;margin:0;">
-        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Port Một Lần</h3>
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Chuyển Đổi Một Lần</h3>
         <p style="font-size:14px;margin:0;color:var(--text-secondary);">Di chuyển thư viện từ ngôn ngữ này sang ngôn ngữ khác, sau đó sở hữu kết quả</p>
       </div>
       <div class="card" style="padding:20px;margin:0;">
-        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Port Liên Tục</h3>
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Chuyển Đổi Liên Tục</h3>
         <p style="font-size:14px;margin:0;color:var(--text-secondary);">Đồng bộ thay đổi từ upstream liên tục, tự động hợp nhất tính năng mới</p>
       </div>
       <div class="card" style="padding:20px;margin:0;">
-        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Port Thích Ứng</h3>
+        <h3 style="font-size:16px;margin-bottom:8px;color:var(--accent);">Chuyển Đổi Thích Ứng</h3>
         <p style="font-size:14px;margin:0;color:var(--text-secondary);">Định hình lại API cho phù hợp quy ước nội bộ trong khi bảo toàn ngữ nghĩa</p>
       </div>
     </div>
 
     <h2>Tại Sao Không Dùng Bản Gốc?</h2>
 
-    <p>Đôi khi thư viện gốc sai ngôn ngữ. Đôi khi nó có phụ thuộc chúng tôi không chấp nhận được. Đôi khi chúng tôi cần tích hợp sâu với hệ thống nội bộ. Semport cho phép chúng tôi hưởng lợi từ tư duy upstream mà không bị ràng buộc bởi lựa chọn upstream.</p>
+    <p>Đôi khi thư viện gốc sai ngôn ngữ. Đôi khi nó có phụ thuộc chúng tôi không chấp nhận được. Đôi khi chúng tôi cần tích hợp sâu với hệ thống nội bộ. Chuyển Ngữ cho phép chúng tôi hưởng lợi từ tư duy upstream mà không bị ràng buộc bởi lựa chọn upstream.</p>
   </article>
 
   <div class="page-nav">

@@ -118,6 +118,141 @@
 
     <p style="font-size:14px;color:var(--text-muted);margin-top:48px;">Ghi chú: Đây là lựa chọn dịch thuật có chủ đích của phiên bản tiếng Việt. Nội dung gốc tiếng Anh tại <a href="https://factory.strongdm.ai" target="_blank">factory.strongdm.ai</a> sử dụng thuật ngữ "Software Factory".</p>
 
+    <hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
+
+    <h2>Làm Theo Ca: Nhìn Từ Góc Độ Live vs Night Mode</h2>
+
+    <p>Kỹ thuật <a href="shift-work.html">Làm Theo Ca</a> của StrongDM chia phát triển phần mềm thành 2 chế độ: <strong>tương tác</strong> và <strong>không tương tác</strong>. Đây chính là bài toán mà chúng tôi cũng đã độc lập đúc kết thành mô hình <strong>Live Mode vs Night Mode</strong>.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;margin:32px 0;">
+      <div class="card" style="border-top:4px solid var(--accent);margin:0;">
+        <h3 style="color:var(--accent);font-size:16px;">Tương Tác = Live Mode</h3>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:12px;">StrongDM gọi là "Interactive" -- con người cùng agent phát triển tầm nhìn chung qua vòng lặp tạo-làm rõ-phê duyệt.</p>
+        <p style="font-size:14px;line-height:1.7;margin:0;color:var(--text-secondary);">Chúng tôi gọi là <strong>"Chế độ Nhanh"</strong> (&lt;10 giây) -- vùng tập trung. Mỗi giây chờ = 10% mất tập trung. Tốc độ là tất cả.</p>
+      </div>
+      <div class="card" style="border-top:4px solid var(--accent-secondary);margin:0;">
+        <h3 style="color:var(--accent-secondary);font-size:16px;">Không Tương Tác = Night Mode</h3>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:12px;">StrongDM gọi là "Non-Interactive" -- ý định đã hoàn chỉnh, agent chạy xuyên suốt không cần con người.</p>
+        <p style="font-size:14px;line-height:1.7;margin:0;color:var(--text-secondary);">Chúng tôi gọi là <strong>"Chế độ Tự động"</strong> (&gt;15 phút) -- làm việc khi bạn ngủ. Spec rõ ràng, model mạnh nhất, có checkpoint.</p>
+      </div>
+    </div>
+
+    <h3>Điều StrongDM chưa nói: Vùng Chết</h3>
+
+    <p>Trong thực hành, chúng tôi phát hiện thêm một vùng nguy hiểm mà StrongDM không đề cập:</p>
+
+    <div class="card" style="border-left:4px solid var(--warning);padding:24px;margin:24px 0;">
+      <div style="font-weight:600;margin-bottom:8px;color:var(--warning);">Vùng Chết: 1-15 phút</div>
+      <div style="font-size:14px;color:var(--text-secondary);line-height:1.7;">
+        Quá chậm để giữ trạng thái tập trung (flow state), nhưng quá nhanh để chuyển sang làm việc khác. Con người mắc kẹt trong trạng thái "chờ tích cực" -- không làm gì nhưng không dám rời đi.<br><br>
+        <strong>Giải pháp:</strong> Tách nhỏ thành nhiều tác vụ &lt;10 giây (Live Mode), hoặc gom lại thành batch &gt;15 phút (Night Mode). Không bao giờ để người dùng chờ 1-15 phút.
+      </div>
+    </div>
+
+    <h3>Quy trình kết hợp</h3>
+
+    <p>Trong thực tế, hai chế độ không tách rời mà xen kẽ nhau theo chu kỳ:</p>
+
+    <div class="card" style="padding:24px;">
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px;">
+        <div style="text-align:center;min-width:100px;">
+          <div style="font-weight:600;color:var(--accent);margin-bottom:4px;">Live</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Khám phá, định hướng,<br>sửa nhanh</div>
+        </div>
+        <div style="color:var(--text-muted);font-size:20px;">&#8594;</div>
+        <div style="text-align:center;min-width:100px;">
+          <div style="font-weight:600;color:var(--accent-secondary);margin-bottom:4px;">Night</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Thực thi, xây dựng,<br>kiểm thử</div>
+        </div>
+        <div style="color:var(--text-muted);font-size:20px;">&#8594;</div>
+        <div style="text-align:center;min-width:100px;">
+          <div style="font-weight:600;color:var(--accent);margin-bottom:4px;">Live</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Đánh giá kết quả,<br>điều chỉnh</div>
+        </div>
+      </div>
+    </div>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">StrongDM nhìn từ góc kiến trúc hệ thống: tách tương tác khỏi không tương tác. Chúng tôi nhìn từ góc trải nghiệm con người: tối ưu thời gian chờ và trạng thái tập trung. Hai góc nhìn bổ sung cho nhau.</div>
+    </blockquote>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
+
+    <h2>Ai Điều Khiển Nông Trại? Câu Hỏi Mà StrongDM Chưa Đặt Ra</h2>
+
+    <p>StrongDM mô tả rất kỹ <em>cỗ máy</em> -- hạt giống, vòng lặp, kỹ thuật -- nhưng ít nói về <em>người vận hành</em>. Ai viết đặc tả đầu tiên? Tại sao có người viết spec hay hơn người khác? Điều gì quyết định chất lượng hạt giống?</p>
+
+    <p>Đây là câu hỏi mà chúng tôi đã suy nghĩ nhiều và đúc kết thành khung tư duy <strong>METAMIND</strong> -- ba năng lực cốt lõi của người chỉ huy AI agents.</p>
+
+    <h3>Ba trụ cột và ba nguyên tắc</h3>
+
+    <p>Khi đặt METAMIND cạnh các nguyên tắc của StrongDM, một sự tương ứng rõ ràng hiện ra:</p>
+
+    <div style="display:grid;gap:0;margin:32px 0;">
+
+      <div style="display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;">
+        <div class="card" style="margin:0;border-radius:12px 0 0 0;border-bottom:1px solid var(--border);border-right:none;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">METAMIND</div>
+          <div style="font-weight:600;margin-bottom:4px;">Siêu Tưởng Tượng</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Hình dung chính xác từng bước sẽ xảy ra. Spec tốt = tưởng tượng rõ. Đây là năng lực quan trọng nhất.</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">&#8596;</div>
+        <div class="card" style="margin:0;border-radius:0 12px 0 0;border-bottom:1px solid var(--border);border-left:none;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-secondary);margin-bottom:8px;">StrongDM</div>
+          <div style="font-weight:600;margin-bottom:4px;">Hạt Giống</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Đặc tả ban đầu -- PRD, vài câu mô tả, ảnh chụp màn hình. Chất lượng hạt giống quyết định mùa vụ.</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;">
+        <div class="card" style="margin:0;border-radius:0;border-bottom:1px solid var(--border);border-right:none;">
+          <div style="font-weight:600;margin-bottom:4px;">Siêu Điều Khiển</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Spec rõ + rules chặt + feedback loops + auto-recovery. Khả năng điều phối nhiều agent cùng lúc.</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;border-bottom:1px solid var(--border);">&#8596;</div>
+        <div class="card" style="margin:0;border-radius:0;border-bottom:1px solid var(--border);border-left:none;">
+          <div style="font-weight:600;margin-bottom:4px;">Xác Thực + Phản Hồi</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Vòng lặp kín: chạy kịch bản, đo sự hài lòng, sửa, lặp lại cho đến khi holdout pass.</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:stretch;">
+        <div class="card" style="margin:0;border-radius:0 0 0 12px;border-right:none;">
+          <div style="font-weight:600;margin-bottom:4px;">Siêu Nhận Thức</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Nhìn thấy cấu trúc sâu, xu hướng trước người khác. Biết khi nào cần đẩy hết cỡ, khi nào cần dừng lại.</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;">&#8596;</div>
+        <div class="card" style="margin:0;border-radius:0 0 12px 0;border-left:none;">
+          <div style="font-weight:600;margin-bottom:4px;">Bơm Thêm Token</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Nhận ra đâu là đòn bẩy, dám đẩy hết cỡ. Sự ngây thơ có chủ đích -- phá bỏ giới hạn cũ của Software 1.0.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h3>Mảnh ghép còn thiếu</h3>
+
+    <p>StrongDM nói <em>"Mọi phần mềm đều cần một hạt giống ban đầu"</em> nhưng không giải thích tại sao cùng một công cụ, có người tạo ra phần mềm xuất sắc còn người khác thì không. METAMIND trả lời câu hỏi đó:</p>
+
+    <div class="card" style="padding:24px;margin:24px 0;">
+      <div style="display:grid;gap:20px;">
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Tưởng tượng mờ &#8594; Spec mơ hồ &#8594; Agent lúng túng</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Nếu người chỉ huy không hình dung rõ sản phẩm cuối cùng trông như thế nào, hành vi ra sao trong từng tình huống, thì đặc tả sẽ thiếu sót và agent sẽ đi sai hướng.</div>
+        </div>
+        <div>
+          <div style="font-weight:600;margin-bottom:4px;color:var(--accent);">Tưởng tượng rõ &#8594; Spec chặt chẽ &#8594; Agent hội tụ</div>
+          <div style="font-size:14px;color:var(--text-secondary);">Khi người chỉ huy thấy trước cả lỗi có thể xảy ra và cách xử lý, đặc tả trở thành bản đồ chi tiết. Vòng lặp Attractor hội tụ nhanh hơn vì hạt giống đã tốt từ đầu.</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Nói cách khác: StrongDM xây dựng <strong>cỗ máy</strong> tuyệt vời (Attractor, DTU, vòng lặp xác thực), nhưng chất lượng đầu ra vẫn phụ thuộc vào <strong>chất lượng đầu vào</strong> -- và đầu vào đến từ năng lực tư duy của con người.</p>
+
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+      <div style="font-size:18px;font-style:italic;line-height:1.6;">Nông trại thông minh đến mấy cũng cần người chủ trại biết chọn giống. Hệ thống tưới tự động không thể bù đắp cho việc gieo nhầm hạt.</div>
+    </blockquote>
+
   </article>
 
   <div class="page-nav">
