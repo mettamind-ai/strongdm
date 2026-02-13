@@ -22,41 +22,40 @@
 
   <header>
     <div class="tag">StrongDM AI</div>
-    <h1>Nông Trại Phần Mềm Thông Minh Và Khoảnh Khắc Agentic</h1>
+    <h1>Nông Trại Phần Mềm Thông Minh Và Khoảnh Khắc Tự Chủ của AI</h1>
     <p class="subtitle">Tại sao "Nông Trại" chứ không phải "Nhà Máy"? <a href="explain.html">Xem giải thích →</a></p>
     <div class="meta">6 tháng 2, 2026 · Justin McCarthy</div>
   </header>
 
   <p>Chúng tôi đã xây dựng một <strong>Nông Trại Phần Mềm Thông Minh</strong>: phát triển phi tương tác, nơi đặc tả + kịch bản điều khiển các agent viết code, chạy bộ kiểm thử, và hội tụ mà không cần con người review.</p>
 
-  <p>Nếu bạn muốn bắt đầu từ nguyên tắc đầu tiên, tôi đề xuất vài ràng buộc và hướng dẫn mà, khi áp dụng lặp đi lặp lại, sẽ đưa mọi đội đến cùng những trực giác, niềm tin, và cuối cùng là một nông trại của riêng mình. Dưới dạng kōan (câu hỏi thiền định, tự vấn lặp đi lặp lại để khai ngộ):</p>
+  <p>Nếu bạn muốn bắt đầu từ nguyên tắc đầu tiên, tôi đề xuất vài ràng buộc và hướng dẫn mà, khi áp dụng lặp đi lặp lại, sẽ đưa mọi đội đến cùng trực giác, niềm tin, và cuối cùng là một nông trại của riêng mình. Dưới dạng kōan (tự vấn lặp đi lặp lại để khai ngộ):</p>
 
-  <ul>
-    <li>Tại sao mình đang làm việc này? <em>(ngụ ý: model nên làm thay)</em></li>
-  </ul>
+  <blockquote style="margin:24px 0;padding:20px 28px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+    <div style="font-size:18px;font-style:italic;line-height:1.6;">Tại sao mình đang làm việc này? <em>(ngụ ý: AI nên làm thay)</em></div>
+  </blockquote>
 
   <p>Dưới dạng quy tắc:</p>
 
-  <ul>
-    <li>Code <strong>không nên được</strong> viết bởi con người</li>
-    <li>Code <strong>không nên được</strong> review bởi con người</li>
-  </ul>
+  <blockquote style="margin:24px 0;padding:20px 28px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+    <div style="font-size:16px;line-height:1.6;">Code <strong>không nên được</strong> viết bởi con người<br>Code <strong>không nên được</strong> review bởi con người</div>
+  </blockquote>
 
   <p>Và ở dạng thực tế:</p>
 
-  <ul>
-    <li>Nếu bạn chưa chi ít nhất <strong>$1.000 cho tokens mỗi ngày</strong> cho mỗi kỹ sư, nông trại phần mềm của bạn còn cải thiện được</li>
-  </ul>
+  <blockquote style="margin:24px 0;padding:20px 28px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
+    <div style="font-size:16px;line-height:1.6;">Nếu bạn chưa chi ít nhất <strong>$1.000 cho tokens mỗi ngày</strong> cho mỗi kỹ sư, nông trại phần mềm của bạn còn cải thiện được</div>
+  </blockquote>
 
   <h2>Câu Chuyện StrongDM AI</h2>
 
   <p>Ngày 14 tháng 7 năm 2025, Jay Taylor và Navan Chauhan cùng tôi (Justin McCarthy, đồng sáng lập, CTO) thành lập đội AI của StrongDM.</p>
 
-  <p>Chất xúc tác là một bước chuyển quan sát được vào cuối năm 2024: với bản cập nhật thứ hai của Claude 3.5 (tháng 10/2024), các luồng công việc agentic dài hạn bắt đầu <strong>tích lũy sự đúng đắn</strong> thay vì tích lũy lỗi.</p>
+  <p>Chất xúc tác là một bước chuyển quan sát được vào cuối năm 2024: với bản cập nhật thứ hai của Claude 3.5 (tháng 10/2024), các luồng công việc tự chủ dài hạn của AI bắt đầu <strong>tích lũy sự đúng đắn</strong> thay vì tích lũy lỗi.</p>
 
   <p>Trước bước cải thiện này của model, việc áp dụng LLM lặp đi lặp lại vào các tác vụ coding sẽ tích tụ mọi loại lỗi tưởng tượng được (hiểu sai, ảo giác, cú pháp, vi phạm DRY, không tương thích thư viện, v.v.). Ứng dụng sẽ suy thoái và cuối cùng "sụp đổ": chết bởi ngàn vết cắt nhỏ.</p>
 
-  <p>Cùng với chế độ YOLO của Cursor, model cập nhật từ Anthropic đã mang đến tia sáng đầu tiên của thứ chúng tôi gọi nội bộ là <strong>phát triển phi tương tác</strong> hay <strong>phần mềm được nuôi trồng</strong>.</p>
+  <p>Cùng với chế độ YOLO (cho AI chạy tự do không cần xác nhận từng bước) của Cursor, model cập nhật từ Anthropic đã mang đến tia sáng đầu tiên của thứ chúng tôi gọi nội bộ là <strong>phát triển phi tương tác</strong> hay <strong>phần mềm được nuôi trồng</strong>.</p>
 
   <h2>Tìm Đòn Bẩy, Đẩy Hết Cỡ!</h2>
 
@@ -66,15 +65,15 @@
 
   <p>Ban đầu chỉ là linh cảm. Một thí nghiệm. Chúng tôi có thể đi được bao xa mà không viết bất kỳ dòng code nào bằng tay?</p>
 
-  <p>Không xa lắm! Ít nhất là: không xa, cho đến khi chúng tôi thêm tests. Tuy nhiên, agent, bị ám ảnh bởi nhiệm vụ trước mắt, sớm bắt đầu đi đường tắt: <strong>return true</strong> là cách tuyệt vời để pass các test viết hẹp, nhưng có lẽ sẽ không tổng quát hóa thành phần mềm bạn muốn.</p>
+  <p>Không xa lắm! Ít nhất là: không xa, cho đến khi chúng tôi thêm tests. Tuy nhiên, agent, bị ám ảnh bởi nhiệm vụ trước mắt, sớm bắt đầu đi đường tắt: <strong>return true</strong> là cách tuyệt vời để pass các test hẹp, nhưng có lẽ sẽ không tổng quát hóa thành phần mềm bạn muốn.</p>
 
   <h2>Từ Tests Đến Kịch Bản Và Sự Hài Lòng</h2>
 
-  <p>Một chủ đề lặp lại của khoảnh khắc agentic: chúng ta cần ngôn ngữ mới. Ví dụ, từ "test" đã chứng tỏ là không đủ và mơ hồ. Một test, nằm trong codebase, có thể bị viết lại lười biếng để khớp code. Code có thể bị viết lại để pass test một cách tầm thường.</p>
+  <p>Một chủ đề lặp lại của khoảnh khắc tự chủ này: chúng ta cần ngôn ngữ mới. Ví dụ, từ "test" đã chứng tỏ là không đủ và mơ hồ. Một test, nằm trong codebase, có thể bị viết lại lười biếng để khớp code. Code có thể bị viết lại để pass test một cách tầm thường.</p>
 
-  <p>Chúng tôi tái sử dụng từ <strong>kịch bản (scenario)</strong> để đại diện cho một "user story" end-to-end, thường được lưu trữ ngoài codebase - tương tự tập "holdout" (dữ liệu giữ riêng không cho model thấy trong lúc huấn luyện, dùng để đánh giá khách quan), có thể được hiểu trực giác và xác thực linh hoạt bởi LLM.</p>
+  <p>Chúng tôi tái sử dụng từ <strong>kịch bản (scenario)</strong> để đại diện cho một "câu chuyện người dùng (user story) xuyên suốt (end-to-end)", thường được lưu trữ ngoài codebase - tương tự tập "holdout" (dữ liệu giữ riêng không cho model thấy trong lúc huấn luyện, dùng để đánh giá khách quan), có thể được hiểu trực giác và xác thực linh hoạt bởi LLM.</p>
 
-  <p>Vì phần lớn phần mềm chúng tôi nuôi trồng cũng có thành phần agentic, chúng tôi chuyển từ định nghĩa thành công kiểu boolean ("bộ test xanh") sang định nghĩa xác suất và thực nghiệm. Chúng tôi dùng thuật ngữ <strong>sự hài lòng (satisfaction)</strong> để lượng hóa việc xác thực này: trong tất cả các quỹ đạo quan sát được qua tất cả kịch bản, bao nhiêu phần trăm có khả năng làm hài lòng người dùng?</p>
+  <p>Vì phần lớn phần mềm chúng tôi nuôi trồng cũng có thành phần tự chủ (agentic), chúng tôi chuyển từ định nghĩa thành công kiểu boolean ("bộ test xanh") sang định nghĩa xác suất và thực nghiệm. Chúng tôi dùng thuật ngữ <strong>sự hài lòng (satisfaction)</strong> để lượng hóa việc xác thực này: trong tất cả các quỹ đạo quan sát được qua tất cả kịch bản, bao nhiêu phần trăm có khả năng làm hài lòng người dùng?</p>
 
   <h2>Xác Thực Kịch Bản Trong Vũ Trụ Bản Sao Số</h2>
 
@@ -91,7 +90,7 @@
 
   <h2>Kinh Tế Phi Truyền Thống</h2>
 
-  <p>Thành công với DTU minh họa một trong nhiều cách mà Khoảnh Khắc Agentic đã thay đổi sâu sắc kinh tế phần mềm. Tạo bản sao trung thực cao của một ứng dụng SaaS lớn luôn khả thi, nhưng chưa bao giờ khả thi về mặt kinh tế. Nhiều thế hệ kỹ sư có thể đã <em>muốn</em> có bản sao in-memory đầy đủ của CRM để test, nhưng tự kiểm duyệt đề xuất xây nó. Họ thậm chí không đưa cho quản lý, vì biết câu trả lời sẽ là không.</p>
+  <p>Thành công với DTU minh họa một trong nhiều cách mà Khoảnh Khắc Tự Chủ của AI đã thay đổi sâu sắc kinh tế phần mềm. Tạo bản sao trung thực cao của một ứng dụng SaaS lớn luôn khả thi, nhưng chưa bao giờ khả thi về mặt kinh tế. Nhiều thế hệ kỹ sư có thể đã <em>muốn</em> có bản sao in-memory đầy đủ của CRM để test, nhưng tự kiểm duyệt đề xuất xây nó. Họ thậm chí không đưa cho quản lý, vì biết câu trả lời sẽ là không.</p>
 
   <p>Những người xây dựng nông trại phần mềm phải thực hành <strong>sự ngây thơ có chủ đích</strong>: tìm và loại bỏ các thói quen, quy ước và ràng buộc của Software 1.0. DTU là bằng chứng rằng những gì không thể tưởng tượng sáu tháng trước giờ đã trở thành thường ngày.</p>
 
@@ -103,13 +102,6 @@
   </ul>
 
   <p>Cảm ơn bạn đã đọc. Chúc bạn may mắn trong việc xây dựng Nông Trại Phần Mềm Thông Minh của riêng mình.</p>
-
-  <hr>
-
-  <div class="footnotes">
-    <p><sup>1</sup> Chúng tôi không đơn độc trong những niềm tin này. Xem thêm: "The Software Factory" của Luke PM, "I Have Seen the Compounding Teams" của Sam Schillace, và "Five Levels from Spicy Autocomplete to the Software Factory" của Dan Shapiro.</p>
-    <p><sup>2</sup> Những người khác cũng đang xây nhà máy: Devin, 8090, Factory, Superconductor, và Superpowers của Jesse Vincent.</p>
-  </div>
 
   <hr>
 

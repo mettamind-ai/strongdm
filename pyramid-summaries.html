@@ -80,13 +80,13 @@
         var isMax = lv >= item.summaries.length - 1;
         wrapper.innerHTML =
           '<div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">' + item.title + '</div>' +
-          '<div id="pyr-text-' + idx + '" style="padding:16px;background:' + (isMax ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.03)') + ';border-radius:8px;border-left:3px solid var(--accent-secondary);cursor:' + (isMax ? 'default' : 'pointer') + ';transition:background 0.2s;font-size:15px;line-height:1.7;color:var(--text);">' +
+          '<div id="pyr-text-' + idx + '" style="padding:16px;background:' + (isMax ? 'var(--pyr-bg-max)' : 'var(--pyr-bg)') + ';border-radius:8px;border-left:3px solid var(--accent-secondary);cursor:' + (isMax ? 'default' : 'pointer') + ';transition:background 0.2s;font-size:15px;line-height:1.7;color:var(--text);">' +
             item.summaries[lv] + (isMax ? '' : '<span style="margin-left:8px;color:var(--accent);font-size:14px;">+</span>') +
           '</div>' +
           '<div style="display:flex;align-items:center;gap:12px;margin-top:8px;font-size:12px;color:var(--text-muted);">' +
             '<div style="display:flex;gap:3px;">' +
               wordCounts.map(function(w, i) {
-                return '<div style="width:16px;height:4px;border-radius:2px;background:' + (i <= lv ? 'var(--accent-secondary)' : 'rgba(255,255,255,0.1)') + ';transition:background 0.2s;"></div>';
+                return '<div style="width:16px;height:4px;border-radius:2px;background:' + (i <= lv ? 'var(--accent-secondary)' : 'var(--pyr-dot-off)') + ';transition:background 0.2s;"></div>';
               }).join('') +
             '</div>' +
             '<span style="font-family:monospace;">~' + wordCounts[lv] + 'w</span>' +
@@ -130,7 +130,7 @@
 
     <p>Mẫu hình phản ánh cách một giám đốc điều hành đào sâu trong quá trình chẩn đoán: bắt đầu với cái nhìn tổng quan về tổ chức, sau đó phòng ban, rồi nhóm, và cuối cùng cá nhân, mở rộng chi tiết chỉ nơi tín hiệu đòi hỏi.</p>
 
-    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:rgba(34,166,184,0.05);border-radius:0 12px 12px 0;">
+    <blockquote style="margin:32px 0;padding:24px 32px;border-left:4px solid var(--accent);background:var(--blockquote-bg);border-radius:0 12px 12px 0;">
       <div style="font-size:18px;font-style:italic;line-height:1.6;">Context window là hữu hạn. Sự chú ý là quý giá. Tóm Tắt Kim Tự Tháp cho phép bạn nhìn thấy cả khu rừng lẫn từng cái cây, chỉ là không cùng một lúc.</div>
     </blockquote>
   </article>
