@@ -261,6 +261,27 @@
 
     <p>Điều này không phải trùng hợp. Nó cho thấy những nguyên tắc này không phải ý kiến cá nhân mà là <strong>quy luật tự nhiên</strong> của việc phát triển phần mềm bằng AI -- ai thực hành đủ lâu đều sẽ tự khám phá ra chúng.</p>
 
+    <h3 id="swe-agi-reference">Đối chiếu thêm với swe-agi</h3>
+
+    <p>Trước khi đi vào bảng so sánh MOS và StrongDM, chúng tôi kiểm tra thêm một nguồn độc lập: <strong><a href="https://github.com/moonbitlang/SWE-AGI" target="_blank">SWE-AGI</a></strong> (benchmark xây phần mềm từ spec). Mục đích là xem các nguyên tắc này có xuất hiện trong môi trường đánh giá chuẩn hóa hay không.</p>
+
+    <div style="display:grid;gap:16px;margin:24px 0 32px;">
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--accent-secondary);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--accent-secondary);">Trùng ở lõi phương pháp</div>
+        <div style="font-size:14px;color:var(--text-secondary);">SWE-AGI đóng gói bài toán theo mô hình <strong>specification-driven</strong>: <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">TASK.md</code> + <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">specs/</code> + <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">*_spec.mbt</code> để cố định API. Điều này khớp trực tiếp với tư duy hạt giống + ranh giới cứng.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--accent-secondary);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--accent-secondary);">Trùng ở vòng lặp xác thực</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Agent lặp local trên public tests, rồi submit qua <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">swe-agi-submit</code> để chấm bằng private tests và nhận pass/fail. Đây là cùng mẫu loop: chạy → đo → sửa → lặp.</div>
+      </div>
+      <div class="card" style="padding:20px;margin:0;border-left:4px solid var(--accent-secondary);">
+        <div style="font-weight:600;margin-bottom:8px;color:var(--accent-secondary);">Trùng ở harness tách biệt môi trường</div>
+        <div style="font-size:14px;color:var(--text-secondary);">SWE-AGI tách <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">client_data</code> (agent nhìn thấy) và <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">server_data</code> (đầy đủ private tests), kèm <code style="background:var(--code-bg);padding:2px 6px;border-radius:4px;">run-metrics.json</code> để đo lường. Đây chính là tinh thần harness engineering.</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:var(--text-muted);">Điểm khác: SWE-AGI là benchmark đánh giá năng lực agent nên không đi sâu vào các kỹ thuật vận hành riêng như DTU, Gene Transfusion, Semantic Port hay Night/Live Mode. Vì vậy phần tiếp theo vẫn tập trung bảng so sánh trực tiếp <strong>MOS ↔ StrongDM</strong>.</p>
+
     <h3>Những điểm trùng khớp</h3>
 
     <div style="display:grid;gap:2px;margin:32px 0;">
